@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 48" width="64" height="48" aria-hidden="true">
+  <style>
+    .bar { fill: currentColor; transform-origin: center bottom; animation: bounce 1000ms infinite ease-in-out; }
+    .b1 { animation-delay: 0ms; }
+    .b2 { animation-delay: 120ms; }
+    .b3 { animation-delay: 240ms; }
+    .b4 { animation-delay: 360ms; }
+
+    @keyframes bounce {
+      0%   { transform: scaleY(0.25); }
+      25%  { transform: scaleY(1.0); }
+      50%  { transform: scaleY(0.6); }
+      75%  { transform: scaleY(0.9); }
+      100% { transform: scaleY(0.25); }
+    }
+  </style>
+
+  <!-- Bar positions: x, width, initial height visually centered (transform scales from bottom) -->
+  <rect class="bar b1" x="6"  y="8" width="8"  height="32" rx="2"/>
+  <rect class="bar b2" x="22" y="4" width="8"  height="36" rx="2"/>
+  <rect class="bar b3" x="38" y="0" width="8"  height="40" rx="2"/>
+  <rect class="bar b4" x="54" y="4" width="8"  height="36" rx="2"/>
+</svg>

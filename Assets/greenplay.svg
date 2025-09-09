@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 56 56" aria-hidden="true">
+  <!-- Circle -->
+  <circle cx="28" cy="28" r="26" fill="#1ED760"/>
+  <!-- Play triangle -->
+  <path d="M23 18 L23 38 L39 28 Z" fill="#0A0A0A"/>
+</svg>

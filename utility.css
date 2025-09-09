@@ -1,0 +1,48 @@
+.bg-grey{
+    background-color: #2b2b2b;
+
+}
+.grey{
+    color: grey !important;;
+}
+
+.bg-black{
+    background-color: black;
+}
+
+.flex{
+    display: flex;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-center{
+        align-items: center;
+}
+
+
+
+.invert{
+    filter: invert(1);
+}
+
+.m-5{
+    margin :8px;
+
+}
+
+.radius{
+    border-radius: 3px;
+}
+
+.font{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.m-right{
+       margin : 8px 8px 8px 0;
+}
+

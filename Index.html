@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="utility.css">
+    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+    <link rel="icon" href="./Assets/favicon.svg">
+    
+</head>
+<body>
+    <div class="container flex">
+       <div class="left">
+           <div class="home bg-grey m-5 radius">
+            <div class="close">
+                <img class="close-svg invert" src="./Assets/close.svg">
+            </div>
+            
+            <ul>
+                <li ><img class="spotyfy invert" src="./Assets/logo.svg"   alt="spotify"></li>
+                <li ><img class="invert" src="./Assets/home.svg" alt="home">Home</li>
+                <li class="grey"><img class="invert" src="./Assets/serch.svg" alt="search">Search</li>
+                
+            </ul>
+           </div>
+           <div class="library bg-grey m-5 radius">
+            <div class="heading">
+                <img class="invert"src="./Assets/library-icon.svg">
+                <p>Your library</p>
+            </div>
+            <div class="songlist">
+                <ul>
+                    <!-- <li>
+                        <div class="music-svg">
+                            <img src="./Assets/music.svg">
+                            <div class="song-name">song name</div>
+                        </div>
+                        
+                        <div class="songlist-svg">
+                            <img src="/Assets/play.svg">
+                        </div>
+
+                    </li> -->
+                    
+                   
+                </ul>
+            </div>
+           </div>
+       </div>
+       <div class="right ">
+        <div class="header bg-grey m-right radius">
+            <div class="nav">
+                <img class="invert hamburger"src="./Assets/hamburger.svg">
+                <img class="invert media-display"src="./Assets/less.svg">
+                <img class="invert media-display"src="./Assets/greater.svg">
+
+            </div>
+            <div class="btn ">
+                <button class="sign-btn font  ">Sign up</button>
+                <button class="log-btn font ">Login in</button>
+            </div>
+        </div>
+        <div class="playlist">
+            <h2 >Spotify Playlist</h2>
+            <div class="cardContainer">
+                
+            </div>
+            
+        </div>
+        <div class="playbar">
+            <div class="seekbar">
+                <div class="progress"></div>
+                <div class="circle"></div>
+            </div>
+            <div class="song-title">
+            
+            </div>
+                <div class="play-wraper">
+                    <img id="prev" src="./Assets/prev.svg">
+                    <img id="play" src="./Assets/play.svg">
+                    <img id="next" src="./Assets/next.svg">
+                </div>
+                <div class="play-right">
+                    <div class="volume">
+                        <img  src="./Assets/volume.svg">
+                        <input type="range" value="range" id="range">
+                    </div>
+                       <div class="song-time"></div>
+                </div>
+              
+
+                </div>
+            </div>
+       </div>
+
+
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

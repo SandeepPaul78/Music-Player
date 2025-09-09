@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="72" height="72" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="play">
+  <title>Play</title>
+  <!-- Background (dark) -->
+  <rect width="72" height="72" rx="8" fill="#2b2b2b"/>
+  <!-- white circle -->
+  <circle cx="36" cy="36" r="26" fill="#ffffff"/>
+  <!-- play triangle (pointing right) -->
+  <path d="M46 36 L30 46 L30 26 Z" fill="#111111"/>
+</svg>
