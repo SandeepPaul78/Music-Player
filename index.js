@@ -16,7 +16,7 @@ function formatTime(seconds) {
 
 async function getsong(folder) {
   currentfolder = folder;
-  let fetchsong = await fetch(`http://127.0.0.1:3000/${folder}`);
+  let fetchsong = await fetch(`/${folder}`);
   let songdata = await fetchsong.text();
 
   let div = document.createElement("div");
@@ -83,7 +83,7 @@ const playmusic = (track, pause = false) => {
 };
 
 async function displayallalbum (){
-    let fetchsong = await fetch(`http://127.0.0.1:3000/song/`);
+    let fetchsong = await fetch(`/song/`);
     let songdata = await fetchsong.text();
 
   let div = document.createElement("div");
@@ -95,7 +95,7 @@ async function displayallalbum (){
       const element = array[index];
       if(element.href.includes("/song")){
         let folder = element.href.split("/").slice(-2)[0]
-        let a = await fetch(`http://127.0.0.1:3000/song/${folder}/info.json`);
+        let a = await fetch(`/song/${folder}/info.json`);
         let response = await a.json();
         cardcontainer.innerHTML = cardcontainer.innerHTML + `<div class="card" data-folder="${folder}">
                     <div class="greenplay">
