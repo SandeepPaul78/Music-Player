@@ -1,0 +1,19 @@
+# Node dependencies
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables (agar future me use ho)
+.env
+
+# System files (OS related)
+.DS_Store
+Thumbs.db
+
+# Cache / build (future proof)
+dist/
+build/
+.cache/
