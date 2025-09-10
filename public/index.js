@@ -159,7 +159,7 @@ async function displayallalbum() {
 
 async function main() {
   // get the all list of song
- await getsong('Karan-Aujla');
+ await getsong('karan-aujla');
   // console.log(songs);
   playmusic(songs[0], true)
 
