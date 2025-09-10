@@ -58,6 +58,7 @@ app.get('/api/song/:folder', async (req, res) => {
         const songs = files.filter(file => file.endsWith('.mp3'));
         res.json(songs);
     } catch (error) {
+          console.error("Error in /api/song/:folder", error);
         res.status(500).json({ error: 'Failed to list songs in folder' });
     }
 });
