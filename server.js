@@ -6,14 +6,16 @@ const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// CORS middleware ताकि आपका frontend server से कनेक्ट हो सके
+// CORS middleware
 app.use(cors());
 
-// आपकी सारी static files (HTML, CSS, JS, Assets) को serve करने के लिए
-app.use(express.static(path.join(__dirname)));
+// ✅ Sirf public folder ko serve karna
+app.use(express.static(path.join(__dirname, 'public')));
+
+// ✅ Songs ke liye static route
 app.use('/song', express.static(path.join(__dirname, 'song')));
 
-// API Endpoint जो albums और उनकी जानकारी देगा
+// API Endpoint: Albums
 app.get('/api/albums', async (req, res) => {
     const songFolderPath = path.join(__dirname, 'song');
     
@@ -33,7 +35,7 @@ app.get('/api/albums', async (req, res) => {
                         folder: folderName,
                         album: info.album,
                         title: info.title,
-                        cover: `song/${folderName}/cover.jpg`
+                        cover: `/song/${folderName}/cover.jpg`
                     });
                 } catch (error) {
                     console.error(`Error reading info.json in ${folderName}:`, error);
@@ -46,7 +48,7 @@ app.get('/api/albums', async (req, res) => {
     }
 });
 
-// API Endpoint जो किसी album के गानों की लिस्ट देगा
+// API Endpoint: Songs of a specific album
 app.get('/api/songs/:folder', async (req, res) => {
     const folderName = req.params.folder;
     const folderPath = path.join(__dirname, 'song', folderName);
@@ -58,6 +60,10 @@ app.get('/api/songs/:folder', async (req, res) => {
     } catch (error) {
         res.status(500).json({ error: 'Failed to list songs in folder' });
     }
+});
+// ✅ New code to handle the root path
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.listen(PORT, () => {
