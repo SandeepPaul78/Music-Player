@@ -50,7 +50,7 @@ app.get('/api/albums', async (req, res) => {
 
 // API Endpoint: Songs of a specific album
 app.get('/api/songs/:folder', async (req, res) => {
-    const folderName = decodeURIComponent(req.params.folder);
+    const folderName = req.params.folder;
     const folderPath = path.join(__dirname, 'song', folderName);
     
     try {
