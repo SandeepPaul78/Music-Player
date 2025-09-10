@@ -16,7 +16,7 @@ function formatTime(seconds) {
 
 async function getsong(folder) {
   currentfolder = folder;
-  let fetchsong = await fetch(`/api/songs/${folder.split('/').pop()}`);
+  let fetchsong = await fetch(`/api/song/${folder.split('/').pop()}`);
   let songdata = await fetchsong.json();
 
   // let div = document.createElement("div");
