@@ -16,14 +16,24 @@ function formatTime(seconds) {
 
 async function getsong(folder) {
   currentfolder = folder;
-  let fetchsong = await fetch(`/api/song/${folder.split('/').pop()}`);
-  let songdata = await fetchsong.json();
+  let data = [];
+  try {
+    const response = await fetch(`/api/song/${folder.split('/').pop()}`);
+    if (!response.ok) {
+      console.error('GET /api/song failed with status', response.status);
+    } else {
+      const json = await response.json();
+      data = Array.isArray(json) ? json : [];
+    }
+  } catch (e) {
+    console.error('Network error fetching songs:', e);
+  }
 
   // let div = document.createElement("div");
   // div.innerHTML = songdata;
   // let as = div.getElementsByTagName("a");
 
-  songs = songdata;
+  songs = data;
   // for (let index = 0; index < as.length; index++) {
   //   const element = as[index];
   //   if (element.href.endsWith(".mp3")) {
@@ -138,7 +148,7 @@ async function displayallalbum() {
             <div class="greenplay">
                 <img src="./Assets/greenplay.svg">
             </div>
-            <img src="./${album.cover}" alt="${album.album} cover">
+            <img src="${album.cover}" alt="${album.album} cover">
             <h3>${album.album}</h3>
             <p>${album.title}</p>
         </div>`;
@@ -159,9 +169,11 @@ async function displayallalbum() {
 
 async function main() {
   // get the all list of song
- await getsong('karan-aujla');
+ const initialSongs = await getsong('karan-aujla');
   // console.log(songs);
-  playmusic(songs[0], true)
+  if (initialSongs.length > 0) {
+    playmusic(initialSongs[0], true)
+  }
 
 
  displayallalbum();
