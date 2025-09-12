@@ -23,7 +23,8 @@ async function getsong(folder) {
       console.error('GET /api/song failed with status', response.status);
     } else {
       const json = await response.json();
-      data = Array.isArray(json) ? json : [];
+      data = Array.isArray(json) ? json.map(song => song.toLowerCase().replace(/ /g, '-').replace(/_/g, '-')) : [];
+
     }
   } catch (e) {
     console.error('Network error fetching songs:', e);
@@ -79,8 +80,8 @@ async function getsong(folder) {
 }
 
 const playmusic = (track, pause = false) => {
- 
-  currentsong.src = `/song/${currentfolder.split('/').pop()}/${track}`;
+  const cleanTrack = track.toLowerCase().replace(/ /g, '-').replace(/_/g, '-');
+  currentsong.src = `/song/${currentfolder.split('/').pop()}/${cleanTrack}`;
   if (!pause) {
     currentsong.play();
     play.src = "./Assets/pause.svg";
@@ -267,6 +268,7 @@ async function main() {
     
     play.src= "./Assets/play.svg";
    let index = songs.indexOf(currentsong.src.split("/").pop());
+   
 
    if((index+1)<songs.length){
     playmusic(songs[index+1])
