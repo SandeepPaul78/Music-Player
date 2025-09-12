@@ -264,19 +264,24 @@ async function main() {
     });
   });
 
-  currentsong.addEventListener("ended", ()=>{
-    
-    play.src= "./Assets/play.svg";
-   let index = songs.indexOf(currentsong.src.split("/").pop());
-   
+ currentsong.addEventListener("ended", playNextSong);
 
-   if((index+1)<songs.length){
-    playmusic(songs[index+1])
-   }
-
-  })
+document.addEventListener("visibilitychange", () => {
+  if (!document.hidden) {
+    if (currentsong.currentTime >= currentsong.duration) {
+      playNextSong();
+    }
+  }
+});
 
 
+function playNextSong() {
+  play.src = "./Assets/play.svg";
+  let index = songs.indexOf(currentsong.src.split("/").pop());
+  if ((index + 1) < songs.length) {
+    playmusic(songs[index + 1]);
+  }
+}
 
  
     
