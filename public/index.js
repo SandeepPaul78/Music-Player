@@ -281,7 +281,7 @@ async function main() {
 
 document.addEventListener("visibilitychange", () => {
   if (!document.hidden) {
-    if (currentsong.currentTime >= currentso76ng.duration) {
+    if (currentsong.currentTime >= currentsong.duration) {
       playNextSong();
     }
   }
