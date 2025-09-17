@@ -303,3 +303,18 @@ function playNextSong() {
 }
 
 main();
+
+window.addEventListener('load', () => {
+    const loader = document.getElementById('loader-container');
+    const content = document.querySelector('.container');
+
+    // लोडर को छुपाएं
+    if (loader) {
+        loader.style.display = 'none';
+    }
+
+    // ऐप के कंटेंट को दिखाएं
+    if (content) {
+        content.style.display = 'block';
+    }
+});
