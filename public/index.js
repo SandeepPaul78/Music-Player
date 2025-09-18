@@ -1,15 +1,3 @@
-// Service Worker Registration (sabse upar ya DOM load ke baad)
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
-      .then(registration => {
-        console.log('ServiceWorker registered!');
-      })
-      .catch(err => {
-        console.log('ServiceWorker registration failed: ', err);
-      });
-  });
-}
 
 let currentsong = new Audio();
 let play = document.getElementById("play");
@@ -304,17 +292,3 @@ function playNextSong() {
 
 main();
 
-window.addEventListener('load', () => {
-    const loader = document.getElementById('loader-container');
-    const content = document.querySelector('.container');
-
-    // लोडर को छुपाएं
-    if (loader) {
-        loader.style.display = 'none';
-    }
-
-    // ऐप के कंटेंट को दिखाएं
-    if (content) {
-        content.style.display = 'block';
-    }
-});
