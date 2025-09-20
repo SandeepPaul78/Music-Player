@@ -51,7 +51,7 @@ body{
 }
 
 .library{
-    min-height: 81vh;
+    min-height: 80vh;
     position: relative;
 }
 .heading img{
@@ -146,18 +146,23 @@ h3{
 
 .card{
     width: 16%;
-    background-color: grey;
+    background-color: #201f1f;
     padding: 10px;
     position: relative;
     border-radius: 1rem;
     height : 227px;
+    box-shadow: 0px 2px 5px 2px rgba(255, 255, 255, 0.4);
 
 
+}
+.card:hover{
+    background-color: #414040;
 }
 .card img{
     width : 100%;
   border-radius: 1rem;
     object-fit : cover;
+    outline : 1px solid;
 }
 
 .card p{
@@ -253,7 +258,7 @@ h3{
 .seekbar{
     position : absolute;
     bottom : 10%;
-    width: 98%;
+    width: 95%;
     height : 7px;
     background: rgb(194, 190, 190);
    cursor: pointer;
@@ -328,6 +333,10 @@ h3{
 }
 .greenplay{
     display: none;
+}
+
+.seekbar{
+    width : 95%;
 }
 
 .m-right{
